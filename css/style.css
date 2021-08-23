@@ -1,0 +1,198 @@
+@keyframes road1 {
+    0% {
+        top: 50%;
+        left: -80px;
+    }
+    20%{
+        top: 5%;
+        left: 25%;
+    }
+    40%{
+        top:75%;
+        left: 50%;
+        
+    }
+    70%{
+        top: 15%;
+        left: 80%;
+        
+    }
+    100%{
+        top: 85%;
+        left: 110%;
+    }
+}
+@keyframes road2 {
+    0% {
+        left:150%;
+        top: 10%;
+        
+    }
+    25% {
+        top: 50%;
+        left: 80%;
+    }
+    50%{
+        top:30%;
+        left: 50%;
+        
+    }
+    75%{
+        top: 40%;
+        left: 30%;
+        
+    }
+    100%{
+        top: 10%;
+        left: -50%;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+@keyframes dogway {
+    0% {
+        right:100%;
+        bottom: 18px;
+    }    
+    25%{
+        right:40%;
+        bottom: 18px;
+    }
+    45%{
+        right: 30%;
+        bottom: 18px;
+    }
+    67%{
+        right: 35%;
+        bottom: 18px;
+    }
+    100%{
+        right:-100px;
+        bottom: 18px;
+    }
+}
+@keyframes laugh{
+    0% {
+        left: none;
+        top:none;
+    }    
+    
+    100%{        
+        left: none;
+        top: none;
+    }
+}
+
+@font-face {
+	font-family: 'GolosTextWebBlack';
+	src:
+		url('../fonts/Golos-Text_Black.woff2') format('woff2'),
+		url('../fonts/Golos-Text_Black.woff') format('woff'),
+        url('../fonts/Golos-Text_Black.ttf') format('ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    counter-reset: shot;
+    position: relative;
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 bottom;
+    cursor: crosshair;
+    overflow: hidden;
+    z-index: 3;
+    
+}
+
+.listShot{
+    font-family: 'GolosTextWebBlack';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 35px;
+    color: #fff;
+}
+
+
+
+input[type="checkbox"]:checked{
+    counter-increment: shot;
+    
+}
+
+input[type="checkbox"]{
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked + .duck{
+    display: none;
+}
+
+.listShot::after{
+    content: counter(shot); 
+      
+}
+.duck{
+    display: block;
+    width: 75px;
+    height: 75px;    
+    cursor: crosshair;
+    position:absolute ;
+    top: 50%;
+    left: -80px;
+}
+.duck1{
+    animation: road1 10s linear 1s infinite ;
+}
+.duck3{
+    animation: road1 9s  linear 2s infinite;
+}
+.duck5{
+    animation: road1 13s linear 3s infinite;
+}
+.duck2{
+    animation: road2 4.5s linear 1.5s infinite;
+}
+.duck4{   
+    animation: road2 6s linear 4s infinite;
+}
+.duck6{
+    animation: road2 8s linear 2.5s infinite;
+}
+/* input[type="checkbox"]:checked + .dog{
+    display: none;
+} */
+.dog{
+    display: block;
+    width: 105px;
+    height: 109px;
+    position: absolute;
+    bottom: 18px;
+    cursor: crosshair;
+    
+}
+.sniff{
+    animation: dogway 20s linear  infinite;
+    animation-duration: 20s;
+}
+.dog1{
+    display: block;
+    width: 96px;
+    height: 76px;
+    position: absolute;
+    bottom: 125px;
+    cursor: crosshair;
+    z-index: 1; 
+    padding-left: 328px;   
+}
+
